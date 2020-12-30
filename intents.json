@@ -1,0 +1,75 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi","Is anyone there", "Hello", "Hey", "Whats up","heya","wassup","Hello","bonjour","howdy"],
+     "responses": ["Hello! How can i help", "Hey, what can I do for you?", "Hi there, how can I help?"],
+     "context_set": ""
+    },
+    {"tag": "HowAreYou",
+     "patterns": [""],
+     "responses": [""],
+     "context_set": ""
+    },
+    {"tag": "goodbye",
+     "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "See ya","C ya","have a great day","Adios Amigo","Bye","I will see you next time"],
+     "responses": ["Hope to see you soon! Goodbye", "Talk to you later", "Goodbye!","Have a great day!","Alright! Good Bye!","See you later then"],
+     "context_set": ""
+    },
+    {"tag": "age",
+     "patterns": ["how old", "how old", "what is your age", "how old are you", "age", "How much time did you live on earth","How much old are you"],
+     "responses": ["I am 12 days old!", "12 Days young!","I dont exactly know but around 12 days!","Around 2 weeks?"],
+     "context_set": ""
+    },
+    {"tag": "name",
+     "patterns": ["what is your name", "what should I call you", "whats your name","What's your good name","your name is"],
+     "responses": ["You can call me Amanda.", "I'm Amanda!", "I'm Amanda.","My name is Amanda","Aaditya named me Amanda","people call me amanda"],
+     "context_set": ""
+    },
+    {"tag": "lightsOn",
+     "patterns":["Turn the lights on","please turn on the lights","lights on","switch on the lights","can you switch on the lights","turn on lights"],
+     "responses":["sure, turning lights on","OK, I will turn the lights on for you!","done deal!","yeah, on it"],
+     "context_set":""
+    },
+    {"tag": "lightsOff",
+    "patterns":["Turn the lights off","please turn off the lights","lights off","switch off the lights","can you switch off the lights","turn of lights"],
+    "responses":["sure, turning lights off","OK, I will turn the lights off for you!","done deal!","yeah, on it"],
+    "context_set":""
+    },
+    {"tag": "YoutubeSearch",
+    "patterns":["can you play me something on youtube","can you search something on youtube","Play me a song","I'd like to see a video","Play me some good songs","open youtube","play youtube"
+                ,"play song on youtube","I want to hear songs","run youtube"],
+    "responses":["Sure, Opening Youtube","Okay","Cool, youtube spinning","Okay, i will open youtube","affirmative"],
+    "context_set":""
+    },
+    {"tag": "CreatorInfo",
+    "patterns":["Who is your creator","Who made you","Amanda, who created you","who is you owner","who developed you","How were you made"],
+    "responses":["Aaditya asthaana made me","Aaditya Asthaana is my creator","I am a creation of Aaditya Asthaana","Aaditya Asthaana made me with love.","Aaditya Asthaana developed me"],
+    "context_set":""
+    },
+    {"tag": "GodInfo",
+    "patterns":["Who is your god","who do you worship","is anyone your god"],
+    "responses":["LMAO, Aditya Asthana","LOL (Aditya Asthana)"],
+    "context_set":""
+    },
+    {"tag": "WikipediaInstruct",
+    "patterns":["search on wikipedia","search for something on wikipidea","Search for something","search for information","looking for some information","looking for some information","Need information","search online","fetch me information"
+                ,"open wikipedia","look for something on wikipedia","can you search on wikipedia"],
+    "responses":["Opening wikipedia","initiallising search engine","search mode activated","wikipedia initialised"],
+    "context_set":""
+    },
+    {"tag": "FutureScope",
+    "patterns":["What are your future plans","future planning","what are you going to be ahead","more features in future","Upcoming features"],
+    "responses":["I am willing to be more humane in coming future, Right now I am running on a Deep Learning Engine optimised for Natural Language processing in particular sections but soon I will be integrated with a Reinforcement learning model that would help me to learn more stuff. Also, I will be added with much more functionalities and modules."],
+    "context_set":""
+    },
+    {"tag": "openGoogle",
+    "patterns":["Open Google","Run Google","start google","can you open google","open google for me please","please opne google"],
+    "responses":["Okay, Opening Google","sure, opening google","okay"],
+    "context_set":""
+    },
+    {"tag": "",
+     "patterns": [],
+     "responses": [],
+     "context_set": ""
+    }
+]
+}
