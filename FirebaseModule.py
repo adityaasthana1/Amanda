@@ -8,6 +8,7 @@ class UserInformationFirebase :
         self.useremail = email
         self.userpassword = password
         self.uid = uid
+        
     
     
 
@@ -27,12 +28,14 @@ class FirebasUtils:
         password = input("Enter your Password :\n")
         
         try :
-            self.firebaseAuth.sign_in_with_email_and_password(email,password)
+            login = self.firebaseAuth.sign_in_with_email_and_password(email,password)
             self.firebaseAuth = self.firebase.auth()
-            userInstance = UserInformationFirebase(email,password,self.firebaseAuth)
+            userInstance = UserInformationFirebase(email,password,login['localId'])
             with open("UserData.pickle",'wb') as file:
-        
+                pickle.dump(userInstance,file)
+                file.close()
+            print("logged in ")
+            print(login['localId'])
         except Exception as e :
             print(e)
 
-print(firebaseConfig)

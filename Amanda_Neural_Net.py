@@ -9,6 +9,7 @@ import pickle
 import CommunicationInterface as ci
 import Amanda_PROCESSOR as ap
 import pyrebase
+import FirebaseModule as fm
 
 
 
@@ -71,7 +72,6 @@ except:
         pickle.dump((words, labels, training, output), f)
 
 tensorflow.compat.v1.reset_default_graph()
-
 net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 12)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
@@ -124,10 +124,22 @@ def chat():
 
         # print(random.choice(responses))
 
-with open("UserCredentials.pickle",rb) as file :
-    firebaseConfig = pickle.load(file)
-    if bool(firebaseConfig) :
-        chat()
-    else :
-        pass
+try :
+    with open("UserData.pickle",'rb') as file :
+        userData = pickle.load(file)
+        if bool(userData) :
+            chat()
+        else :
+            FirebaseInstance = fm.FirebasUtils()
+            FirebaseInstance.LoginUser()
+
+except Exception as e:
+    FirebaseInstance = fm.FirebasUtils()
+    FirebaseInstance.LoginUser()
+    Amanda = ci.AmandaComm()
+    Amanda.speak("Logged In")
+    chat()
+    
+
+
 

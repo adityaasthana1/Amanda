@@ -3,4 +3,7 @@
 Lib/
 share/
 Scripts/
+__pycache__/*
+userData.pickle
+pywhatkit_dbs.txt
 
