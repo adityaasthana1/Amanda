@@ -101,7 +101,6 @@ def bag_of_words(s, words):
 
 
 def chat():
-    print("Start talking with the bot (type quit to stop)!")
     while True:
         #inp = input("You: ")
         Amanda = ci.AmandaComm()
@@ -133,13 +132,17 @@ while True:
             else :
                 FirebaseInstance = fm.FirebasUtils()
                 FirebaseInstance.LoginUser()
+                LoginResult = FirebaseInstance.LoginUser()
+                if LoginResult == "LOGIN_SUCCESS" :
+                    chat()
 
     except Exception as e:
         FirebaseInstance = fm.FirebasUtils()
-        FirebaseInstance.LoginUser()
-        Amanda = ci.AmandaComm()
-        Amanda.speak("Logged In")
-        chat()
+        LoginResult = FirebaseInstance.LoginUser()
+        if LoginResult == "LOGIN_SUCCESS" :
+            Amanda = ci.AmandaComm()
+            Amanda.speak("Logged In")
+            chat()
     
 
 

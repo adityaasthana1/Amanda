@@ -8,9 +8,6 @@ class UserInformationFirebase :
         self.useremail = email
         self.userpassword = password
         self.uid = uid
-        
-    
-    
 
 class FirebasUtils:
     def __init__(self):
@@ -20,6 +17,7 @@ class FirebasUtils:
         self.firebase = pyrebase.initialize_app(self.firebaseConfig)
         self.firebaseAuth = self.firebase.auth()
         self.firebaseDatabase = self.firebase.database()
+        
 
     def LoginUser(self):
         Amanda = ci.AmandaComm()
@@ -36,6 +34,12 @@ class FirebasUtils:
                 file.close()
             print("logged in ")
             print(login['localId'])
-        except Exception as e :
-            print(e)
+            return "LOGIN_SUCCESS"
+        except requests.HTTPError as e:
+            error_json = e.args[1]
+            error = json.loads(error_json)['error']['message']
+            print(error)
+            if error == "ENAIL_NOT_FOUND":
+                print("Email not available!")
+
 
