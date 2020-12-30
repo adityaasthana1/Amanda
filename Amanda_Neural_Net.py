@@ -126,13 +126,13 @@ def chat():
 
 while True:
     try :
-    with open("UserData.pickle",'rb') as file :
-        userData = pickle.load(file)
-        if bool(userData) :
-            chat()
-        else :
-            FirebaseInstance = fm.FirebasUtils()
-            FirebaseInstance.LoginUser()
+        with open("UserData.pickle",'rb') as file :
+            userData = pickle.load(file)
+            if bool(userData) :
+                chat()
+            else :
+                FirebaseInstance = fm.FirebasUtils()
+                FirebaseInstance.LoginUser()
 
     except Exception as e:
         FirebaseInstance = fm.FirebasUtils()
