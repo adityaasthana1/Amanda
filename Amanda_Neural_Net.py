@@ -124,7 +124,8 @@ def chat():
 
         # print(random.choice(responses))
 
-try :
+while True:
+    try :
     with open("UserData.pickle",'rb') as file :
         userData = pickle.load(file)
         if bool(userData) :
@@ -133,12 +134,12 @@ try :
             FirebaseInstance = fm.FirebasUtils()
             FirebaseInstance.LoginUser()
 
-except Exception as e:
-    FirebaseInstance = fm.FirebasUtils()
-    FirebaseInstance.LoginUser()
-    Amanda = ci.AmandaComm()
-    Amanda.speak("Logged In")
-    chat()
+    except Exception as e:
+        FirebaseInstance = fm.FirebasUtils()
+        FirebaseInstance.LoginUser()
+        Amanda = ci.AmandaComm()
+        Amanda.speak("Logged In")
+        chat()
     
 
 
