@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "545877391848",
+    "firebase_url": "https://ledautomation-1f46e.firebaseio.com",
+    "project_id": "ledautomation-1f46e",
+    "storage_bucket": "ledautomation-1f46e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545877391848:android:b28f1ffdd37d46f4e50c5d",
+        "android_client_info": {
+          "package_name": "com.macht.amanda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545877391848-os6ncq0jtfgsan7ugfspki7ur9urnrdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzPSEWXWDAmaMwuQ33fubExhq-_UsXyQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545877391848-os6ncq0jtfgsan7ugfspki7ur9urnrdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
