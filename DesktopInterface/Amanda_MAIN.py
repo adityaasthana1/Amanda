@@ -23,7 +23,7 @@ def wishMe():
     
     elif hour >= 12 and hour < 18 :
         speak('Good Afternoon!')
-    
+        print("this is to test if git is working")
     else :
         speak ('Good Evening!')
     

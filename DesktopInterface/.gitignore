@@ -6,4 +6,8 @@ Scripts/
 __pycache__/*
 userData.pickle
 pywhatkit_dbs.txt
-
+Scripts/
+__pycache__/
+.vscode
+pyvenv.cfg
+PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
