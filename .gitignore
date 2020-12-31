@@ -6,4 +6,6 @@ Scripts/
 __pycache__/*
 userData.pickle
 pywhatkit_dbs.txt
-
+Scripts/
+__pycache__/
+.vscode
