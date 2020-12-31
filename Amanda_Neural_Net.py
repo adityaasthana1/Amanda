@@ -128,17 +128,21 @@ while True:
         with open("UserData.pickle",'rb') as file :
             userData = pickle.load(file)
             if bool(userData) :
+                print(userData.useremail)
                 chat()
             else :
                 FirebaseInstance = fm.FirebasUtils()
-                FirebaseInstance.LoginUser()
                 LoginResult = FirebaseInstance.LoginUser()
                 if LoginResult == "LOGIN_SUCCESS" :
                     chat()
 
     except Exception as e:
+        Amanda = ci.AmandaComm()
+        Amanda.speak("Please Enter your Email and password in the console.")
+        email = input("Enter your Email :\n")
+        password = input("Enter your Password :\n")
         FirebaseInstance = fm.FirebasUtils()
-        LoginResult = FirebaseInstance.LoginUser()
+        LoginResult = FirebaseInstance.LoginUser(email,password)
         if LoginResult == "LOGIN_SUCCESS" :
             Amanda = ci.AmandaComm()
             Amanda.speak("Logged In")

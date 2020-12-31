@@ -19,12 +19,8 @@ class FirebasUtils:
         self.firebaseDatabase = self.firebase.database()
         
 
-    def LoginUser(self):
-        Amanda = ci.AmandaComm()
-        Amanda.speak("Please Enter your Email and password in the console.")
-        email = input("Enter your Email :\n")
-        password = input("Enter your Password :\n")
-        
+    def LoginUser(self,email,password):
+               
         try :
             login = self.firebaseAuth.sign_in_with_email_and_password(email,password)
             self.firebaseAuth = self.firebase.auth()
