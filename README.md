@@ -25,7 +25,7 @@ Just follow the following steps
 
 ```
 $ git clone https://github.com/adityaasthana1/Amanda  #clone repository</n>
-$ venv Amanda  #Create virtual environment in same folder.
+$ venv DesktopModule  #Create virtual environment in same folder.
 $ source ./Amanda/bin/activate  #Activate the virtual environment
 (Amanda)$ pip install -r ./requirements.txt  #Installing dependencies
 (Amanda)$ py Amanda_Neural_Net.py
