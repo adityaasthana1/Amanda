@@ -38,5 +38,13 @@ class FirebasUtils:
             print(error)
             if error == "ENAIL_NOT_FOUND":
                 print("Email not available!")
+            
+    def DatabaseTasks(self,tag):
+        with open("userData.pickle",'rb') as file:
+            userData = pickle.load(file)
 
-
+        if "lightsOff" in tag:
+            self.firebaseDatabase.child(userData.uid).child("D1").set("OFF")
+        if "lightsOn" in tag:
+            self.firebaseDatabase.child(userData.uid).child("D1").set("ON")
+    

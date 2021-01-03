@@ -8,6 +8,7 @@ import CommunicationInterface
 import EmotionModule as EM
 import json
 import random
+import FirebaseModule as fm
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -18,19 +19,11 @@ class ProcessorAmanda() :
         with open('intents.json') as file:
             self.data = json.load(file) 
 
-    def TestFunction(self, x):
-        print(self.a)
-        print(self.b)
-        print(x)
-        engine.say(x)
-        engine.runAndWait()
-
     def speak(self,AudioInput):
         engine.say(AudioInput)
         engine.runAndWait()
     
     def ExecuteTask(self,query,tag):
-        Youtube_wordset = YoutubeModule.YoutubeUtil().YT_wordset
         Emotion_wordset = EM.EmotionInterface().key_wordset
         Amanda = CommunicationInterface.AmandaComm()
         for tg in self.data["intents"]:
@@ -54,15 +47,19 @@ class ProcessorAmanda() :
             print(results)
 
         elif "YoutubeSearch" in tag : #  any(x in query for x in Youtube_wordset):
-            
             YoutubeRef = YoutubeModule.YoutubeUtil()
             YoutubeRef.TestFunction()
             print("Simulated")
             YoutubeRef.YoutubeSimulator(query)
+
+        elif "lightsOff" or "lightsOn" in tag  :
+            firebaseUtils = fm.FirebasUtils()
+            firebaseUtils.DatabaseTasks(tag)
         
         elif any(y in query for y in Emotion_wordset):
             EmotionInstance = EM.EmotionInterface()
             EmotionInstance.ProcessEmotion(query)
+
         elif "goodbye" in tag :
             Amanda.speak(random.choice(responses))
             quit()
