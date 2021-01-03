@@ -42,3 +42,4 @@ class AmandaComm():
             return queryx
 
         return query   
+    

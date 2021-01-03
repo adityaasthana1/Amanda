@@ -2,6 +2,7 @@ import pickle
 import pyrebase
 import CommunicationInterface as ci
 import requests
+import json
 
 class UserInformationFirebase :
     def __init__(self, email,password,uid):
@@ -11,7 +12,7 @@ class UserInformationFirebase :
 
 class FirebasUtils:
     def __init__(self):
-        with open("./pickle_data/firebaseDataConfig.pickle",'rb') as file:
+        with open("firebaseDataConfig.pickle",'rb') as file:
             self.firebaseConfig = pickle.load(file)
             file.close()
         self.firebase = pyrebase.initialize_app(self.firebaseConfig)
@@ -25,7 +26,7 @@ class FirebasUtils:
             login = self.firebaseAuth.sign_in_with_email_and_password(email,password)
             self.firebaseAuth = self.firebase.auth()
             userInstance = UserInformationFirebase(email,password,login['localId'])
-            with open("./pickle_data/UserData.pickle",'wb') as file:
+            with open("UserData.pickle",'wb') as file:
                 pickle.dump(userInstance,file)
                 file.close()
             print("logged in ")
