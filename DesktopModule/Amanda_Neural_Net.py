@@ -110,18 +110,20 @@ def chat():
 
         results = model.predict([bag_of_words(query, words)])
         results_index = numpy.argmax(results)
-        tag = labels[results_index]
-        print(tag)
-        if query == "say again please":
-            pass
+        print(results)
+        print(numpy.argmax(results))
+        print(results_index)
+        if(numpy.argmax(results) < 0.50) :
+            print("LOW QUAL")
         else :
-            AmandaProcessor = ap.ProcessorAmanda()
-            AmandaProcessor.ExecuteTask(query,tag)
-        # for tg in data["intents"]:
-        #     if tg['tag'] == tag:
-        #         responses = tg['responses']
-
-        # print(random.choice(responses))
+            tag = labels[results_index]
+            print(tag)
+            if query == "say again please":
+                pass
+            else :
+                AmandaProcessor = ap.ProcessorAmanda()
+                AmandaProcessor.ExecuteTask(query,tag)
+        
 
 while True:
     try :

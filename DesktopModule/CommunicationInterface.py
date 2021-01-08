@@ -1,21 +1,35 @@
 import pyttsx3
 import speech_recognition as sr
-
+from gtts import gTTS
+import playsound as ps
+import random
+import os
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[1].id)
 newVoiceRate = 180
-engine.setProperty
+engine.setProperty('rate',newVoiceRate)
 
 class AmandaComm():
     def __init__(self):
         self.a = 100
         self.b = 200
+
     
     def speak(self,audio):
+        
         engine.say(audio)
         engine.runAndWait()
+
+        '''
+        print("we are here")
+        tts = gTTS(text = audio, lang = 'en', slow = False)
+        randomNum = random.randrange(0,200)
+        tts.save("{}.mp3".format(randomNum))
+        ps.playsound("{}.mp3".format(randomNum))
+        os.remove("{}.mp3".format(randomNum))
+        '''
 
     def takeInput(self) :
     #For Input Source (Microphone Array)

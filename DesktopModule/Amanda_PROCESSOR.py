@@ -40,10 +40,10 @@ class ProcessorAmanda() :
                 results = wikipedia.summary(searchInput,sentences=2)
             except Exception as e :
                 print(e)
-                self.speak('couldnot find that. Try something else.')    
+                Amanda.speak('couldnot find that. Try something else.')    
 
-            self.speak('according to wikipedia')
-            self.speak(results)
+            Amanda.speak('according to wikipedia')
+            Amanda.speak(results)
             print(results)
 
         elif "YoutubeSearch" in tag : #  any(x in query for x in Youtube_wordset):
