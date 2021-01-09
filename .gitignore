@@ -1,3 +1,8 @@
 
 *.mp3
 DesktopModule/RC_2015-01
+DesktopModule/2015-05.db
+DesktopModule/2015-01.db
+DesktopModule/reddit_model/test.to
+DesktopModule/reddit_model/train.to
+DesktopModule/reddit_model/train.from
