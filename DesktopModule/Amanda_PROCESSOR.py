@@ -46,13 +46,22 @@ class ProcessorAmanda() :
             self.speak(results)
             print(results)
 
+        elif "Introduction" in tag:
+            Amanda.speak(responses[0])
+
         elif "YoutubeSearch" in tag : #  any(x in query for x in Youtube_wordset):
             YoutubeRef = YoutubeModule.YoutubeUtil()
             YoutubeRef.TestFunction()
             print("Simulated")
             YoutubeRef.YoutubeSimulator(query)
 
-        elif "lightsOff" or "lightsOn" in tag  :
+        elif "lightsOff" in tag  :
+            Amanda.speak(random.choice(responses))
+            firebaseUtils = fm.FirebasUtils()
+            firebaseUtils.DatabaseTasks(tag)
+
+        elif "lightsOn" in tag  :
+            Amanda.speak(random.choice(responses))
             firebaseUtils = fm.FirebasUtils()
             firebaseUtils.DatabaseTasks(tag)
         
@@ -64,6 +73,7 @@ class ProcessorAmanda() :
             Amanda.speak(random.choice(responses))
             quit()
         else :
+            print("we are here")
             Amanda.speak(random.choice(responses))
 
         

@@ -5,8 +5,8 @@
      "context_set": ""
     },
     {"tag": "HowAreYou",
-     "patterns": [""],
-     "responses": [""],
+     "patterns": ["How are you doing today","How have you been", "are you okay?", "How are you"],
+     "responses": ["I am doing good! what can I do for you", "It's been great" , "I am better"],
      "context_set": ""
     },
     {"tag": "goodbye",
@@ -57,7 +57,7 @@
     "context_set":""
     },
     {"tag": "FutureScope",
-    "patterns":["What are your future plans","future planning","what are you going to be ahead","more features in future","Upcoming features"],
+    "patterns":["What are your future plans","future planning","what are you going to be ahead","more features in future","Upcoming features", "What are your coming features","how are being developed"],
     "responses":["I am willing to be more humane in coming future, Right now I am running on a Deep Learning Engine optimised for Natural Language processing in particular sections but soon I will be integrated with a Reinforcement learning model that would help me to learn more stuff. Also, I will be added with much more functionalities and modules."],
     "context_set":""
     },
@@ -65,6 +65,12 @@
     "patterns":["Open Google","Run Google","start google","can you open google","open google for me please","please opne google"],
     "responses":["Okay, Opening Google","sure, opening google","okay"],
     "context_set":""
+    },
+    {"tag": "Introduction",
+     "patterns": ["Who are you", "Introduce yourself", "can you introduce yourself", "What can you do for me?",
+                    "What are your features","how can you help me", "Who is this", "what makes you cool"],
+     "responses": ["I am Amanda, I am a Deep Learning AI assistant that can help you with finding information, playing music, controlling lights and more. I am in a very beginning phase and in some time I will be able to do more advanced tasks."],
+     "context_set": ""
     },
     {"tag": "",
      "patterns": [],
