@@ -6,15 +6,15 @@ import tensorflow
 import random
 import json
 import pickle
-import CommunicationInterface as ci
+from utility import CommunicationInterface as ci
 import Amanda_PROCESSOR as ap
 import pyrebase
-import FirebaseModule as fm
+from utility import FirebaseModule as fm
 
 
 
 stemmer = LancasterStemmer()
-with open("intents.json") as file:
+with open("./data/intents.json") as file:
     data = json.load(file)
 
 try:
@@ -76,7 +76,6 @@ net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 12)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
-
 model = tflearn.DNN(net)
 
 try:

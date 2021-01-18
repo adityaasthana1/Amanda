@@ -3,12 +3,13 @@ import os
 import sys
 import webbrowser
 import wikipedia
-import YoutubeModule
-import CommunicationInterface
-import EmotionModule as EM
 import json
 import random
-import FirebaseModule as fm
+from utility import YoutubeModule
+from utility import CommunicationInterface
+from utility import EmotionModule as EM
+from utility import FirebaseModule as fm
+from utility import SearchModule as sm
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -16,7 +17,7 @@ engine.setProperty('voice', voices[1].id)
 
 class ProcessorAmanda() :
     def __init__(self): 
-        with open('intents.json') as file:
+        with open('./data/intents.json') as file:
             self.data = json.load(file) 
 
     def speak(self,AudioInput):
@@ -26,34 +27,31 @@ class ProcessorAmanda() :
     def ExecuteTask(self,query,tag):
         Emotion_wordset = EM.EmotionInterface().key_wordset
         Amanda = CommunicationInterface.AmandaComm()
+        YoutubeRef = YoutubeModule.YoutubeUtil()
+            
         for tg in self.data["intents"]:
             if tg['tag'] == tag:
                 responses = tg['responses']
 
         if 'WikipediaInstruct' in tag:
-            Amanda.speak(random.choice(responses))
-            Amanda.speak("what would you like me to search?")
-            searchInput = Amanda.takeInput().lower()
-            Amanda.speak('Searching Wikipedia')
+            SearchInstance = sm.SearchInterface()
+            SearchInstance.SearchWiki(query,tag)
 
-            try: 
-                results = wikipedia.summary(searchInput,sentences=2)
-            except Exception as e :
-                print(e)
-                self.speak('couldnot find that. Try something else.')    
-
-            self.speak('according to wikipedia')
-            self.speak(results)
-            print(results)
+        if 'WikiSearch' in tag:
+            SearchInstance = sm.SearchInterface()
+            SearchInstance.SearchWiki(query,tag)
 
         elif "Introduction" in tag:
             Amanda.speak(responses[0])
 
         elif "YoutubeSearch" in tag : #  any(x in query for x in Youtube_wordset):
-            YoutubeRef = YoutubeModule.YoutubeUtil()
             YoutubeRef.TestFunction()
-            print("Simulated")
+            #print("Simulated")
             YoutubeRef.YoutubeSimulator(query)
+
+        elif "YoutubePlay" in tag:
+            YoutubeRef.Play(query)
+
 
         elif "lightsOff" in tag  :
             Amanda.speak(random.choice(responses))

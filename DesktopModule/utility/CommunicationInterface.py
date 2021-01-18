@@ -5,7 +5,7 @@ import speech_recognition as sr
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[1].id)
-newVoiceRate = 180
+newVoiceRate = 130
 engine.setProperty
 
 class AmandaComm():

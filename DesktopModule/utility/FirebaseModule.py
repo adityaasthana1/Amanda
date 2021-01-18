@@ -1,6 +1,6 @@
 import pickle
 import pyrebase
-import CommunicationInterface as ci
+from utility import CommunicationInterface as ci
 import requests
 import json
 
@@ -12,7 +12,7 @@ class UserInformationFirebase :
 
 class FirebasUtils:
     def __init__(self):
-        with open("firebaseDataConfig.pickle",'rb') as file:
+        with open("./data/firebaseDataConfig.pickle",'rb') as file:
             self.firebaseConfig = pickle.load(file)
             file.close()
         self.firebase = pyrebase.initialize_app(self.firebaseConfig)
@@ -26,7 +26,7 @@ class FirebasUtils:
             login = self.firebaseAuth.sign_in_with_email_and_password(email,password)
             self.firebaseAuth = self.firebase.auth()
             userInstance = UserInformationFirebase(email,password,login['localId'])
-            with open("UserData.pickle",'wb') as file:
+            with open("./data/UserData.pickle",'wb') as file:
                 pickle.dump(userInstance,file)
                 file.close()
             print("logged in ")
@@ -40,7 +40,7 @@ class FirebasUtils:
                 print("Email not available!")
             
     def DatabaseTasks(self,tag):
-        with open("userData.pickle",'rb') as file:
+        with open("./data/UserData.pickle",'rb') as file:
             userData = pickle.load(file)
 
         if "lightsOff" in tag:

@@ -51,9 +51,9 @@
     "context_set":""
     },
     {"tag": "WikipediaInstruct",
-    "patterns":["search on wikipedia","search for something on wikipidea","Search for something","search for information","looking for some information","looking for some information","Need information","search online","fetch me information"
+    "patterns":["can you search on wikipedia","Search for something","looking for some information","looking for some information","Need information","search online","fetch me information"
                 ,"open wikipedia","look for something on wikipedia","can you search on wikipedia"],
-    "responses":["Opening wikipedia","initiallising search engine","search mode activated","wikipedia initialised"],
+    "responses":["Opening wikipedia","initiallising search engine","sure"],
     "context_set":""
     },
     {"tag": "FutureScope",
@@ -70,6 +70,16 @@
      "patterns": ["Who are you", "Introduce yourself", "can you introduce yourself", "What can you do for me?",
                     "What are your features","how can you help me", "Who is this", "what makes you cool"],
      "responses": ["I am Amanda, I am a Deep Learning AI assistant that can help you with finding information, playing music, controlling lights and more. I am in a very beginning phase and in some time I will be able to do more advanced tasks."],
+     "context_set": ""
+    },
+    {"tag": "YoutubePlay",
+     "patterns": ["play", "play on youtube","on youtube"],
+     "responses": ["Okay"],
+     "context_set": ""
+    },
+    {"tag": "WikiSearch",
+     "patterns": ["Search for","what is", "who is", "look for"],
+     "responses": ["Okay", "sure"],
      "context_set": ""
     },
     {"tag": "",

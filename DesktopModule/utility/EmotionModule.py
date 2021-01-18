@@ -1,7 +1,7 @@
-import CommunicationInterface as CI
-import YoutubeModule as YM
+from utility import CommunicationInterface as CI
+from utility import YoutubeModule as YM
 import random 
-import Favorite
+from utility import Favorite
 import pywhatkit as kit
 
 
