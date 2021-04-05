@@ -40,7 +40,12 @@ py Amanda_Neural_Net.py
 ## Authors
 
 * **Aditya Asthana** - *Initial work + Android Modules* - [LinkedIn](https://www.linkedin.com/in/adityaasthana2018/)
-* *Avanindra Pandey* - *IOT Modules* - [LinkedIn](https://www.linkedin.com/in/avanindra-pandey-66b0101b0/)
+* **Avanindra Pandey** - *IOT Modules* - [LinkedIn](https://www.linkedin.com/in/avanindra-pandey-66b0101b0/)
+* **Akshat Kothari** - *OpenCV Vision Modules* - [LinkedIn](https://www.linkedin.com/in/akshat-kothari-695653177/)
+* **Abdul Ahad** - *OpenCV Vision Modules* - [LinkedIn](https://www.linkedin.com/in/akshat-kothari-695653177/)
+* **Neeraj Surjaye** - *Web Interface* - [LinkedIn](https://www.linkedin.com/in/neeraj-surjaye-5358111a0/)
+* ""Abhijit Panchal** - *Web Interface* 
+* 
 
 
 
